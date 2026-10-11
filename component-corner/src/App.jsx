@@ -51,11 +51,12 @@ const products = [
 ];
 
 function App() {
-  // Load the saved cart from localStorage on first render
+  // Load the saved cart from localStorage on first render.
+  // Falls back to [] if the JSON is invalid or is not an array.
   const [cart, setCart] = useState(() => {
     try {
-      const saved = localStorage.getItem("cart");
-      return saved ? JSON.parse(saved) : [];
+      const saved = JSON.parse(localStorage.getItem("cart"));
+      return Array.isArray(saved) ? saved : [];
     } catch {
       return [];
     }
@@ -63,7 +64,11 @@ function App() {
 
   // Save the cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    try {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } catch {
+      // ignore storage write failures
+    }
   }, [cart]);
 
   const addToCart = (product) => {
