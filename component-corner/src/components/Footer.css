@@ -1,0 +1,52 @@
+/* AI did help me with this file to get the best looking style. */
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 32px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 32px;
+  padding: 20px 32px 12px;
+  text-align: left;
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+.footer .footer-section {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer .footer-section h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer .footer-section h4 {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #667eea;
+}
+
+.footer .footer-section p {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer .footer-copyright {
+  width: 100%;
+  margin: 4px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.75rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+}
